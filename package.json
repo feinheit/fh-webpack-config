@@ -1,7 +1,7 @@
 {
   "name": "fh-webpack-config",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "webpack.config.js",
   "license": "MIT",
   "repository": {
     "type": "git",
