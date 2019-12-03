@@ -1,3 +1,5 @@
+const CWD = process.cwd()
+
 const path = require("path")
 const webpack = require("webpack")
 const BundleTracker = require("webpack-bundle-tracker")
@@ -5,7 +7,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 const {CleanWebpackPlugin} = require("clean-webpack-plugin")
 const TerserJSPlugin = require("terser-webpack-plugin")
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin")
-const packageJson = require(path.resolve(__dirname, "package.json"))
+const packageJson = require(path.resolve(CWD, "package.json"))
 
 const HOST = process.env.HOST || "127.0.0.1"
 const DEBUG = process.env.NODE_ENV !== "production"
@@ -31,7 +33,7 @@ function cssLoader(firstLoader) {
 
 module.exports = {
   mode: DEBUG ? "development" : "production",
-  context: path.join(__dirname, "app", "static", "app"),
+  context: path.join(CWD, "app", "static", "app"),
   devtool: "source-map",
   entry: {
     main: "./main.js",
@@ -72,7 +74,7 @@ module.exports = {
                   {pragma: "h", pragmaFrag: "Fragment"},
                 ],
               ],
-              cacheDirectory: path.resolve(__dirname, "tmp"),
+              cacheDirectory: path.resolve(CWD, "tmp"),
               sourceType: "unambiguous",
             },
           },
@@ -89,7 +91,7 @@ module.exports = {
           options: {
             sassOptions: {
               includePaths: [
-                path.resolve(path.join(__dirname, "node_modules")),
+                path.resolve(path.join(CWD, "node_modules")),
               ],
             },
           },
