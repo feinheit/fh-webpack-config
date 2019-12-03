@@ -31,5 +31,8 @@
     "webpack-bundle-tracker": "^0.4.3",
     "webpack-cli": "^3.3.10",
     "webpack-dev-server": "^3.9.0"
+  },
+  "dependencies": {
+    "webpack-merge": "^4.2.2"
   }
 }
