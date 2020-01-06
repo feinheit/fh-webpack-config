@@ -131,7 +131,6 @@ module.exports = {
     DEBUG
       ? new webpack.NamedModulesPlugin()
       : new webpack.HashedModuleIdsPlugin(),
-    DEBUG ? null : new webpack.optimize.SplitChunksPlugin(),
   ].filter(function(el) {
     return !!el
   }),
@@ -151,18 +150,6 @@ module.exports = {
     hints: DEBUG ? false : "warning",
   },
   optimization: {
-    splitChunks: {
-      cacheGroups: {
-        vendors: {
-          test: /\/node_modules\//,
-          name: "vendors",
-          chunks: "all",
-        },
-      },
-    },
-    runtimeChunk: {
-      name: "manifest",
-    },
     minimizer: [
       new TerserJSPlugin({}),
       new OptimizeCSSAssetsPlugin({
