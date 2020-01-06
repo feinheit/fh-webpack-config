@@ -4,12 +4,13 @@
 `yarn add fh-webpack-config`
 
 ## Usage
-This is the minimum code for your `webpack.config.js` file to extend the fh-webpack-config.
+This is an example code for your `webpack.config.js` file to extend the fh-webpack-config.
+
 ```javascript
 const merge = require('webpack-merge')
 const webpackBaseConfig = require('fh-webpack-config')
 
-module.exports = merge(webpackBaseConfig, {
+module.exports = merge(webpackBaseConfig.commonConfig, webpackBaseConfig.reactConfig, {
   // custom weback config
 })
 ```
