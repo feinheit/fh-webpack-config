@@ -3,7 +3,7 @@ const CWD = process.cwd()
 const path = require("path")
 const packageJson = require(path.resolve(CWD, "package.json"))
 
-module.export = {
+module.exports = {
   module: {
     rules: [
       {
