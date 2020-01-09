@@ -10,7 +10,7 @@ This is an example code for your `webpack.config.js` file to extend the fh-webpa
 const merge = require('webpack-merge')
 const webpackBaseConfig = require('fh-webpack-config')
 
-module.exports = merge(webpackBaseConfig.commonConfig, webpackBaseConfig.reactConfig, {
+module.exports = merge.smart(webpackBaseConfig.commonConfig, webpackBaseConfig.reactConfig, {
   // custom weback config
 })
 ```
