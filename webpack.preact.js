@@ -28,7 +28,7 @@ module.exports = {
               plugins: [
                 "@babel/plugin-proposal-object-rest-spread",
                 "@babel/plugin-proposal-class-properties",
-                ['@babel/plugin-transform-react-jsx', {pragma: 'h'}],
+                ["@babel/plugin-transform-react-jsx", {pragma: "h", pragmaFrag: "Fragment"}],
               ],
               cacheDirectory: path.resolve(CWD, "tmp"),
               sourceType: "unambiguous",
