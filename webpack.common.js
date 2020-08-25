@@ -98,7 +98,7 @@ module.exports = {
         use: cssLoader("less-loader"),
       },
       {
-        test: /\.(png|woff|woff2|svg|eot|ttf|gif|jpe?g)$/,
+        test: /\.(png|woff|woff2|svg|eot|ttf|otf|gif|jpe?g)$/,
         use: [
           {
             loader: "url-loader",
