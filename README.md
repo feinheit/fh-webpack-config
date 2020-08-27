@@ -11,6 +11,6 @@ const merge = require('webpack-merge')
 const webpackBaseConfig = require('fh-webpack-config')
 
 module.exports = merge.smart(webpackBaseConfig.commonConfig, webpackBaseConfig.reactConfig, {
-  // custom weback config
+  // custom webpack config
 })
 ```
