@@ -20,8 +20,10 @@ function cssLoader(firstLoader) {
     {
       loader: "postcss-loader",
       options: {
-        plugins: [require("autoprefixer")()],
-        sourceMap: true,
+        postcssOptions: {
+          plugins: [require("autoprefixer")()],
+          sourceMap: true,
+        },
       },
     },
   ]
