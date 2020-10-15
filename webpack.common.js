@@ -4,7 +4,7 @@ const path = require("path")
 const webpack = require("webpack")
 const BundleTracker = require("webpack-bundle-tracker")
 const MiniCssExtractPlugin = require("mini-css-extract-plugin")
-const {CleanWebpackPlugin} = require("clean-webpack-plugin")
+const { CleanWebpackPlugin } = require("clean-webpack-plugin")
 const TerserJSPlugin = require("terser-webpack-plugin")
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin")
 const packageJson = require(path.resolve(CWD, "package.json"))
@@ -28,7 +28,7 @@ function cssLoader(firstLoader) {
     },
   ]
     .concat(firstLoader || [])
-    .filter(function(el) {
+    .filter(function (el) {
       return !!el
     })
 }
@@ -88,9 +88,7 @@ module.exports = {
           loader: "sass-loader",
           options: {
             sassOptions: {
-              includePaths: [
-                path.resolve(path.join(CWD, "node_modules")),
-              ],
+              includePaths: [path.resolve(path.join(CWD, "node_modules"))],
             },
           },
         }),
@@ -133,7 +131,7 @@ module.exports = {
     DEBUG
       ? new webpack.NamedModulesPlugin()
       : new webpack.HashedModuleIdsPlugin(),
-  ].filter(function(el) {
+  ].filter(function (el) {
     return !!el
   }),
   devServer: {
@@ -142,7 +140,7 @@ module.exports = {
     quiet: false,
     https: HTTPS,
     disableHostCheck: true,
-    headers: {"Access-Control-Allow-Origin": "*"},
+    headers: { "Access-Control-Allow-Origin": "*" },
     host: HOST,
     port: 4000,
   },

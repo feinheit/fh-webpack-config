@@ -1,5 +1,7 @@
-const merge = require('webpack-merge')
-const fhWebpackConfig = require('./index.js')
+const merge = require("webpack-merge")
+const fhWebpackConfig = require("./index.js")
 
-module.export = merge.smart(fhWebpackConfig.commonConfig, fhWebpackConfig.chunkSplittingConfig)
-
+module.export = merge.smart(
+  fhWebpackConfig.commonConfig,
+  fhWebpackConfig.chunkSplittingConfig
+)
