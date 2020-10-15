@@ -128,9 +128,6 @@ module.exports = {
     new BundleTracker({
       filename: "./static/webpack-stats-" + (DEBUG ? "dev" : "prod") + ".json",
     }),
-    DEBUG
-      ? new webpack.NamedModulesPlugin()
-      : new webpack.HashedModuleIdsPlugin(),
   ].filter(function (el) {
     return !!el
   }),
@@ -150,6 +147,8 @@ module.exports = {
     hints: DEBUG ? false : "warning",
   },
   optimization: {
+    chunkIds: "deterministic",
+    moduleIds: "deterministic",
     minimizer: [
       new TerserJSPlugin({}),
       new OptimizeCSSAssetsPlugin({

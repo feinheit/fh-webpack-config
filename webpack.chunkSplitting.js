@@ -9,12 +9,9 @@ module.exports = {
   ),
   optimization: {
     splitChunks: {
-      cacheGroups: {
-        vendors: {
-          test: /\/node_modules\//,
-          name: "vendors",
-          chunks: "all",
-        },
+      minSize: {
+        javascript: 30000,
+        webassembly: 50000,
       },
     },
     runtimeChunk: {
