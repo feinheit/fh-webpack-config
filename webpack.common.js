@@ -6,7 +6,7 @@ const BundleTracker = require("webpack-bundle-tracker")
 const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 const { CleanWebpackPlugin } = require("clean-webpack-plugin")
 const TerserJSPlugin = require("terser-webpack-plugin")
-const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin")
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin")
 const packageJson = require(path.resolve(CWD, "package.json"))
 
 const HOST = process.env.HOST || "127.0.0.1"
@@ -151,8 +151,8 @@ module.exports = {
     moduleIds: "deterministic",
     minimizer: [
       new TerserJSPlugin({}),
-      new OptimizeCSSAssetsPlugin({
-        cssProcessorPluginOptions: {
+      new CssMinimizerPlugin({
+        minimizerOptions: {
           preset: [
             "default",
             {
